@@ -4,7 +4,7 @@ Riff or Die est un jeu de survie dans lequel le joueur incarne Mr. Buffa, un per
 
 ## Règles du jeu
 
-L'objectif est de collecter 10 notes de musique. La victoire intervient lorsque ce quota est atteint, la défaite si un zombie touche le joueur. Un système de combo récompense les collectes rapides : le multiplicateur augmente jusqu'à 5x et diminue progressivement si le joueur met trop de temps entre deux notes.
+L'objectif est de collecter 30 notes de musique. La victoire intervient lorsque ce quota est atteint, la défaite si un zombie touche le joueur. Un système de combo récompense les collectes rapides : le multiplicateur augmente jusqu'à 5x et diminue progressivement si le joueur met trop de temps entre deux notes.
 
 La difficulté augmente avec le temps : les zombies apparaissent plus fréquemment et deviennent progressivement plus rapides. Le joueur peut ramasser des power-ups (dash, bouclier guitare, ralentissement du temps) pour faciliter sa survie.
 

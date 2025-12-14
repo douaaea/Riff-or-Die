@@ -36,7 +36,7 @@ let zombieSpawnTimer = 0; // Compteur avant le prochain spawn.
 let zombieSpawnInterval = 140; // Intervalle de base (diminue avec le temps).
 
 // Objectif de victoire
-const NOTES_TO_WIN = 10; // Nombre de notes à collecter pour gagner.
+const NOTES_TO_WIN = 30; // Nombre de notes à collecter pour gagner.
 
 // ========================================
 // PRELOAD - CHARGEMENT DES IMAGES
