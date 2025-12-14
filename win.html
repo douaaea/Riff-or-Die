@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buffa & Zombies - Win</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="screen">
+    <section class="panel panel--wide panel--win">
+
+      <div class="win-layout">
+        <img class="win-sticker" src="assets/end1.png" alt="Win sticker" />
+
+        <div class="win-text">
+          <div class="win-title">YOU HIT EVERY NOTE</div>
+          <div class="win-sub">
+            The crowd is waiting<br>
+            for your killer<br>
+            solo!
+          </div>
+
+          <!-- Stats box between text and button -->
+          <div class="win-stats">
+            <p>🎵 Notes: <span id="final-notes">0</span>/30</p>
+            <p>🏆 Score: <span id="final-score">0</span></p>
+            <p>⏱️ Time: <span id="final-time">0</span>s</p>
+            <p>🔥 Combo: <span id="final-combo">x1.0</span></p>
+          </div>
+
+          <a class="btn btn-white win-try" href="rules.html">TRY AGAIN</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  
+  <script>
+    window.onload = function() {
+      document.getElementById('final-notes').textContent = sessionStorage.getItem('finalNotes') || '0';
+      document.getElementById('final-score').textContent = sessionStorage.getItem('finalScore') || '0';
+      document.getElementById('final-time').textContent = sessionStorage.getItem('finalTime') || '0';
+      document.getElementById('final-combo').textContent = 'x' + (sessionStorage.getItem('finalCombo') || '1.0');
+    };
+  </script>
+
+</body>
+</html>

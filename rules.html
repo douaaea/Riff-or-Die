@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buffa & Zombies - Rules</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+
+<body>
+  <main class="frame-rules">
+    <section class="panel rules-panel">
+
+      <!-- LOGO -->
+      <img
+        class="rules-hero"
+        src="assets/buffaandzombieslogo.png"
+        alt="Buffa and Zombies logo"
+      />
+
+      <!-- TEXTE -->
+      <div class="rules-content">
+        <div class="rules-text">
+          🖱️ <span class="c">Control:</span> Move your mouse<br>
+          🎵 <span class="c">Objective:</span> Collect 30 musical notes<br>
+          🧟 <span class="c">Danger:</span> Avoid the zombies!<br><br>
+
+          ⚡ <span class="c">Power-ups:</span><br>
+          🎸 Guitar – Protection shield (5s)<br>
+          ⚡ Lightning Dash – Quick teleport<br>
+          🧊 Slow-Motion – Slow down zombies<br><br>
+
+          🌲 <span class="c">Forest:</span> Navigate around trees and rocks<br>
+          🎯 <span class="c">Zones:</span> Blue = speed boost / Red = slow down>
+
+          <br><br>
+            <span class="c">Debug:</span> for debug mode, press "D" key
+        </div>
+      </div>
+
+      <!-- BOUTON -->
+        <a onclick="startGameFromMenu()" class="rules-start">START</a>
+
+    </section>
+  </main>
+  <!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script src="vehicle.js"></script>
+<script src="player.js"></script>
+<script src="zombie.js"></script>
+<script src="note.js"></script>
+<script src="powerup.js"></script>
+<script src="obstacle.js"></script>
+<script src="zone.js"></script>
+<script src="particle.js"></script>
+<script src="sketch.js"></script>
+
+
+</body>
+<!-- Wrapper du jeu -->
+<div id="game-wrapper"></div>
+
+<!-- UI Overlay -->
+<div id="ui-overlay" style="display: none;">
+  <!-- Top UI -->
+  <div class="ui-top">
+    <div class="ui-stat">
+      <div class="ui-label">Notes</div>
+      <div class="ui-value"><span id="notes">0</span>/30 🎵</div>
+    </div>
+    <div class="ui-stat">
+      <div class="ui-label">Score</div>
+      <div class="ui-value" id="score">0</div>
+    </div>
+    <div class="ui-stat">
+      <div class="ui-label">Combo</div>
+      <div class="ui-value" id="combo">x1</div>
+    </div>
+    <div class="ui-stat">
+      <div class="ui-label">Time</div>
+      <div class="ui-value" id="time">0s</div>
+    </div>
+  </div>
+  
+  <!-- Power-ups UI -->
+  <div class="ui-bottom">
+    <div class="powerup-icon" id="dash-icon">
+      <span>⚡</span>
+      <div class="powerup-label">DASH</div>
+    </div>
+    <div class="powerup-icon" id="guitar-icon">
+      <span>🎸</span>
+      <div class="powerup-label">GUITAR</div>
+    </div>
+    <div class="powerup-icon" id="slowmo-icon">
+      <span>⏱️</span>
+      <div class="powerup-label">SLOW-MO</div>
+    </div>
+  </div>
+</div>
+
+<!-- Game Over / Victory Screen -->
+<div id="game-over" class="menu-overlay">
+  <div class="menu-box">
+    <h1 id="game-over-title">💀 GAME OVER</h1>
+    <div class="stats-box">
+      <p>🎵 <strong>Notes Collected:</strong> <span id="final-notes">0</span>/30</p>
+      <p>🏆 <strong>Final Score:</strong> <span id="final-score">0</span></p>
+      <p>⏱️ <strong>Time Survived:</strong> <span id="final-time">0</span>s</p>
+      <p>🔥 <strong>Max Combo:</strong> <span id="final-combo">x1</span></p>
+    </div>
+    <button onclick="restartGame()" class="start-button">🔄 TRY AGAIN</button>
+  </div>
+</div>
+
+</html>

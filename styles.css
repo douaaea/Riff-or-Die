@@ -1,0 +1,412 @@
+:root{
+  --panel1: rgba(18,48,82,.85);
+  --panel2: rgba(10,33,58,.55);
+  --text: #e9eef7;
+  --danger: #cc2a2a;
+  --accent: #2ec6ff;
+
+  --btn: #b67a43;
+  --btnBorder: rgba(0,0,0,.22);
+
+  --whiteBtn: #f2f2f2;
+  --whiteBtnBorder: rgba(0,0,0,.20);
+
+  --shadow: 0 14px 34px rgba(0,0,0,.35);
+  --font: "Press Start 2P", system-ui;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; height:100%; }
+
+body{
+  font-family: var(--font);
+  background: url("../assets/background.png") center/cover no-repeat fixed;
+}
+
+/* ===== LAYOUT COMMUN (toutes pages) ===== */
+.screen{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.panel{
+  position:relative;
+  width: min(520px, 92vw);
+  height: 520px;
+  border-radius: 26px;
+  background: linear-gradient(180deg,var(--panel1),var(--panel2));
+  box-shadow: var(--shadow);
+  overflow:hidden; /* par défaut, OK pour intro/win/gameover */
+}
+
+.hero-top{
+  position:absolute;
+  left:50%;
+  top: 10px;
+  transform: translateX(-50%);
+  width: 230px;
+  height:auto;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
+  user-select:none;
+  pointer-events:none;
+}
+
+.content{
+  position:absolute;
+  left: 8%;
+  right: 8%;
+  top: 210px;
+  bottom: 120px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.7;
+  text-shadow: 0 2px 0 rgba(0,0,0,.35);
+  white-space: pre-line;
+}
+
+/* boutons communs */
+.btn{
+  position:absolute;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+
+  border:none;
+  font-family: var(--font);
+  cursor:pointer;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+
+  box-shadow: 0 10px 18px rgba(0,0,0,.25);
+  user-select:none;
+}
+.btn:active{ transform: translateY(2px); filter: brightness(.95); }
+
+.btn-orange{
+  right: 34px;
+  bottom: 34px;
+  background: var(--btn);
+  color:#111;
+  border-radius: 18px;
+  padding: 14px 22px;
+  font-size: 14px;
+  border: 2px solid var(--btnBorder);
+}
+
+.btn-white{
+  left:50%;
+  bottom: 44px;
+  transform: translateX(-50%);
+  background: var(--whiteBtn);
+  color:#111;
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-size: 14px;
+  border: 2px solid var(--whiteBtnBorder);
+}
+
+/* ===== RULES (page wide) ===== */
+.frame-rules{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* panneau wide */
+.rules-panel{
+  width: min(1160px, 92vw);
+  height: 560px;
+  border-radius: 26px;
+  overflow: visible; /* IMPORTANT pour logo qui dépasse */
+}
+
+/* logo rules */
+.rules-hero{
+  position:absolute;
+  top:-140px;
+  left:50%;
+  transform:translateX(-50%);
+  width:280px;
+  z-index:10;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
+  user-select:none;
+  pointer-events:none;
+}
+
+/* texte rules */
+.rules-content{
+  position:absolute;
+  top:50%;
+  left:120px;
+  right:320px;
+  transform:translateY(-40%);
+}
+
+.rules-text{
+  color:var(--text);
+  font-size:16px;
+  line-height:1.75;
+  text-shadow:0 2px 0 rgba(0,0,0,.35);
+  text-align:left;
+}
+
+.rules-text .c{ color: var(--accent); }
+
+/* bouton start rules */
+.rules-start{
+  position:absolute;
+  right:70px;
+  bottom:40px;
+  background:var(--btn);
+  color:#111;
+  text-decoration:none;
+  padding:14px 32px;
+  border-radius:16px;
+  font-size:18px;
+  box-shadow:0 10px 18px rgba(0,0,0,.25);
+  border:2px solid var(--btnBorder);
+}
+.rules-start:active{ transform: translateY(2px); filter: brightness(.95); }
+
+/* ===== WIN (page 4) ===== */
+.panel--win .win-wrap{
+  position:absolute;
+  left: 8%;
+  right: 8%;
+  top: 180px;
+  bottom: 120px;
+
+  display:grid;
+  grid-template-columns: 42% 58%;
+  align-items:center;
+  gap: 14px;
+}
+
+.win-hero{
+  width: 100%;
+  height:auto;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
+  user-select:none;
+  pointer-events:none;
+}
+
+.win-title{
+    margin-bottom: 1500px;
+  text-align:center;
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+  color: var(--text);
+  text-shadow: 0 2px 0 rgba(0,0,0,.35);
+}
+
+.win-sub{
+  text-align:center;
+  color: var(--danger);
+  font-size: 14px;
+  line-height: 1.55;
+  text-shadow: 0 2px 0 rgba(0,0,0,.35);
+}
+
+/* ===== GAME OVER (page 3) ===== */
+.big-title{
+  font-size: 24px;
+  line-height:1.3;
+  letter-spacing:1px;
+}
+/* ===== WIDE PANEL (Win) ===== */
+.panel--wide{
+  width: min(1260px, 95vw);
+  height: 620px;
+  border-radius: 26px;
+}
+
+/* ===== WIN (pixel-perfect like PDF) ===== */
+.panel--win{
+  overflow:hidden;
+}
+
+.win-layout{
+  position:absolute;
+  inset: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 44px;
+  padding: 0 120px;
+}
+
+.win-sticker{
+  width: 350px;           /* taille du perso comme dans le PDF */
+  height:auto;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
+  user-select:none;
+  pointer-events:none;
+}
+
+.win-text{
+  width: 420px;
+  text-align:center;
+  color: var(--text);
+  text-shadow: 0 2px 0 rgba(0,0,0,.35);
+  margin-top: -20px;
+}
+
+.win-title{
+  font-size: 34px;        /* gros titre type pixel */
+  line-height: 1.15;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.win-sub{
+  color: var(--danger);
+  font-size: 18px;
+  line-height: 1.55;
+  margin-bottom: 26px;
+}
+
+/* bouton centré sous le texte */
+.win-try{
+  position: static;       /* on annule absolute du .btn */
+  transform: none;
+  margin-top: 310px;
+}
+/* ===== GAME OVER (pixel-perfect) ===== */
+.panel--gameover{
+  width: min(520px, 92vw);
+  height: 520px;
+  overflow:hidden;
+}
+
+.go-hero{
+  position:absolute;
+  left:50%;
+  top: -40px;
+  transform: translateX(-50%);
+  width: 350px;
+  height:auto;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
+  user-select:none;
+  pointer-events:none;
+}
+
+.go-title{
+  position:absolute;
+  left: 50%;
+  top: 300px;
+  transform: translateX(-50%);
+  color: var(--text);
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 0 rgba(0,0,0,.35);
+  white-space: nowrap;
+}
+
+.go-try{
+    top: 450px;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+}
+/* Game canvas support */
+#game-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.frame-rules {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hide frame-rules when game starts */
+body.game-started main {
+    display: none;
+}
+
+/* Game Over Stats */
+.go-stats {
+  position: absolute;
+  left: 50%;
+  top: 339px;
+  transform: translateX(-50%);
+  width: 380px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid #FFD700;
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: left;
+  z-index: 5;
+}
+
+.go-stats p {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #FFD700;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.go-stats span {
+  color: #00FF00;
+  font-weight: bold;
+}
+
+/* Move button below stats */
+.panel--gameover .go-try {
+  position: absolute;
+  left: 50%;
+  top: auto !important;
+  bottom: 1px !important;
+  transform: translateX(-50%);
+}
+/* Win Stats - Plus grand et visible */
+.win-stats {
+  background: rgba(0, 0, 0, 0.8);
+  border: 3px solid #FFD700;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 25px auto 25px auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+.win-stats p {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  color: #FFD700;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+.win-stats span {
+  color: #00FF00;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* Ajuster le bouton */
+.win-try {
+  margin-top: 25px !important;
+  font-size: 15px !important;
+  padding: 16px 28px !important;
+}
+
