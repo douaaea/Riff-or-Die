@@ -25,6 +25,9 @@ let note2Img, note5Img, note6Img;
 let guitarImg, dashImg, chronoImg; // Images pour les power-ups
 let arbre1Img, arbre2Img, pierre1Img;
 
+// Musique de fond
+let song;
+
 // États du jeu
 let gameState = 'menu'; // 'menu', 'playing', 'gameover', 'victory'
 let startTime;
@@ -68,6 +71,9 @@ function preload() {
   arbre1Img = loadImage('assets/arbre1.png');
   arbre2Img = loadImage('assets/arbre2.png');
   pierre1Img = loadImage('assets/pierre1.png');
+
+  // Charger la musique de fond
+  song = loadSound('assets/ACDC - Back In Black (Instrumental).mp3');
 }
 
 // ========================================
@@ -103,6 +109,12 @@ function startGameFromMenu() {
   
   // Affiche l'overlay UI (score, temps, power-ups).
   document.getElementById('ui-overlay').style.display = 'block';
+  
+  // Démarrer la musique en boucle
+  if (!song.isPlaying()) {
+    song.loop();
+    song.setVolume(0.5);
+  }
   
   // Initialise la partie.
   initGame();
