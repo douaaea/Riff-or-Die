@@ -1,3 +1,10 @@
+## petit demo du jeu et de Debug mode:
+
+
+https://github.com/user-attachments/assets/159209e2-c414-4a27-a743-72f7c063ee41
+
+
+
 # Riff or Die
 
 Riff or Die est un jeu de survie dans lequel le joueur incarne Mr. Buffa, un personnage qui doit collecter des notes de musique tout en évitant une horde de zombies qui le poursuivent sans relâche. Le jeu se déroule dans une forêt parsemée d'obstacles (arbres et pierres) et de zones spéciales qui modifient la vitesse du joueur. L'objectif est de ramasser un certain nombre de notes avant de se faire attraper par les zombies. Le gameplay repose sur des comportements d'intelligence artificielle (steering behaviors) qui donnent aux zombies un comportement réaliste et imprévisible.
@@ -148,6 +155,5 @@ Tous les véhicules utilisent boundaries pour rester confinés dans l'aire de je
 
 ## Outils et ressources utilisés
 
-**Perplexity AI (version gratuite)** a été utilisé pour obtenir de l'aide sur la mise en page CSS et le style de l'interface utilisateur. Cet outil a permis de résoudre des problèmes de positionnement et d'améliorer l'apparence visuelle des écrans de menu et de l'overlay de jeu.
 
 **Assets graphiques** : Tous les sprites du jeu (personnages, notes, power-ups, obstacles) sont des images pixelisées créées dans un style rétro pour donner une esthétique cohérente au projet.
